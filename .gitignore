@@ -31,7 +31,7 @@ wp-config.php
 
 # Log files
 *.log
-.sass-cache
+/.sass-cache/
 
 # OS related files
 *.DS_Store
