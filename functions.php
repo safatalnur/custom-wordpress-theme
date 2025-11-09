@@ -16,6 +16,7 @@ add_action('wp_enqueue_scripts', 'alnur_scripts');
  * Activate menus
  */
 function custom_theme_setup() {
+    load_theme_textdomain('custom_theme', get_template_directory() . '/languages');
     add_theme_support('menus');
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'custom_theme'),

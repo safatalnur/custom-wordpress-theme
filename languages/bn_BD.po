@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: custom-wordpress-theme\n"
+"POT-Creation-Date: 2024-11-08 00:00+0000\n"
+"PO-Revision-Date: 2024-11-08 00:00+0000\n"
+"Last-Translator: Safat Alnur\n"
+"Language-Team: Bangla\n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: functions.php:21
+msgid "Primary Menu"
+msgstr "প্রধান মেনু"
+
+#: functions.php:22
+msgid "Footer Menu"
+msgstr "ফুটার মেনু"
