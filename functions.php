@@ -20,7 +20,7 @@ function custom_theme_setup() {
     add_theme_support('menus');
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'custom_theme'),
-        'footer'  => __('Footer Menu', 'custom_theme'),
+        'secondary'  => __('Footer Menu', 'custom_theme'),
     ));
 }
 add_action('after_setup_theme', 'custom_theme_setup');

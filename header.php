@@ -9,4 +9,15 @@
 </head>
 <body <?php body_class();?>>
 
-<p>This is header</p>
+<?php
+    wp_nav_menu(array(
+        'theme_location'    => 'primary',
+        'container'         => 'nav',
+        'container_id'      => 'custom-theme-nav',
+        'container_class'   => 'custom-theme-nav-container',
+        'menu_class'        => 'custom-theme-nav-lists',
+        'before'            => '<span class="menu-icon"></span>',
+        // 'link_after'       => 'Test',
+        // 'after'             => '<span class="menu-icon-after"></span>', 
+        'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
+    ));
