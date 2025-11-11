@@ -7,7 +7,15 @@
     <title>Alnur Theme</title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class();?>>
+<?php
+    $postname = $post->post_name . '-page';
+    if (is_home() || is_front_page()) :
+        $body_classes = array($postname, 'home-special-class');
+    else :
+        $body_classes = array($postname, 'non-home-class');
+    endif;
+?>
+<body id="<?php echo $postname;?>" <?php body_class($body_classes);?>>
 
 <?php
     wp_nav_menu(array(
