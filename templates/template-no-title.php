@@ -1,8 +1,12 @@
+<?php
+/**
+ * Template Name: No Title Layout
+ */
+?>
 <?php get_header(); ?>
     <?php if(have_posts()) : 
         while(have_posts()) : the_post(); ?>
-            <h1><?php the_title();?></h1>
-            <h2>Hello World!!!!</h2>
+            <h2>This is using No Title Layout template</h2>
             <p><?php the_content();?></p>
         <?php endwhile; ?>
     <?php else : ?>
