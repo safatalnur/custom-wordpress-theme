@@ -29,3 +29,6 @@
         // 'after'             => '<span class="menu-icon-after"></span>', 
         'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
     ));
+?>
+
+<img src="<?php header_image()?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="header-image">

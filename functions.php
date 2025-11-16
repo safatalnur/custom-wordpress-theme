@@ -25,4 +25,13 @@ function custom_theme_setup() {
 }
 add_action('after_setup_theme', 'custom_theme_setup');
 
+/**
+ * Activate additional theme support
+ */
+function additional_custom_theme_setup() {
+    add_theme_support('custom-background');
+    add_theme_support('custom-header');
+    add_theme_support('post-thumbnails');
+}
+add_action('init', 'additional_custom_theme_setup');
 ?>
