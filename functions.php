@@ -29,9 +29,14 @@ add_action('after_setup_theme', 'custom_theme_setup');
  * Activate additional theme support
  */
 function additional_custom_theme_setup() {
+    // Add background color, image option to Theme > Appearance
     add_theme_support('custom-background');
+    // Add Header option to Theme > Appearance
     add_theme_support('custom-header');
+    // Add Post Thumbnais option to individual posts
     add_theme_support('post-thumbnails');
+    // Post page formating theme support
+    add_theme_support('post-formats', array('aside', 'image', 'video'));
 }
 add_action('init', 'additional_custom_theme_setup');
 ?>
