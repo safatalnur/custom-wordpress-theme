@@ -1,10 +1,20 @@
 <?php get_header(); ?>
-    <?php if(have_posts()) : 
-        while(have_posts()) : the_post(); echo 'Post Format: '. get_post_format();?>
-            <?php get_template_part('contents/content', get_post_format());?>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <h2>No Content found</h2>
-    <?php endif; ?>
-<?php get_sidebar();?>
+<div class="row px-4">
+    <div class="col-8">
+        <?php if(have_posts()) : 
+            while(have_posts()) : the_post(); 
+            // echo 'Post Format: '. get_post_format();
+            ?>
+                    <?php get_template_part('contents/content', get_post_format());?>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <h2>No Content found</h2>
+        <?php endif; ?>
+    </div>
+    <div class="col-4">
+        <div class="sticky-top" style="top: 70px !important">
+            <?php get_sidebar();?>
+        </div>
+    </div>
+</div>
 <?php get_footer(); ?>

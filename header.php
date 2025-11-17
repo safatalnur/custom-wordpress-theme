@@ -18,7 +18,7 @@
 <body id="<?php echo $postname;?>" <?php body_class($body_classes);?>>
 
 <!-- Bootstrap menu is used instead of WP Menu -->
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" data-bs-theme="light">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #e3f2fd;" data-bs-theme="light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Custom WordPress Theme</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
