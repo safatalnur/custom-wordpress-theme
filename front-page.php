@@ -13,7 +13,7 @@
     </div>
     <div class="col-4">
         <div class="sticky-top" style="top: 70px !important">
-            <?php get_sidebar();?>
+            <?php get_sidebar('home-sidebar');?>
         </div>
     </div>
 </div>
