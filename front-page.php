@@ -17,4 +17,82 @@
         </div>
     </div>
 </div>
+<section id="most-recent-post" class="px-4 col-12 text-center" style="max-width: 700px; margin: auto;">
+    <h2>Most Recent Post</h2>
+
+    <div class="border border-danger">
+        <?php 
+            $lastBlog = new WP_Query(array(
+                'type'  => 'posts',
+                'posts_per_page' => 1,
+            ));
+            // var_dump($lastBlog);
+            if ($lastBlog->have_posts()) :
+                while ($lastBlog->have_posts()) : $lastBlog->the_post();?>
+                    <?php the_post_thumbnail('medium');?>
+                    <a href="<?php the_permalink();?>">
+                        <h3><?php the_title();?></h3>
+                    </a>
+                    <p><?php the_excerpt();?></p>
+                <?php endwhile;
+            else : ?>
+                <h2>No posts found</h2>
+            <?php endif;
+            wp_reset_postdata();
+        ?>
+    </div>
+</section>
+<section id="next-2-recent-posts" class="px-4 col-12 text-center" style="max-width: 700px; margin: auto;">
+    <h2>Next Two (2) Recent Posts</h2>
+
+    <div class="border border-primary">
+        <?php 
+            $args = array(
+                'type'  => 'posts',
+                'posts_per_page' => 2,
+                'offset'        => 1,
+            );
+            $lastBlog = new WP_Query($args);
+            // var_dump($lastBlog);
+            if ($lastBlog->have_posts()) :
+                while ($lastBlog->have_posts()) : $lastBlog->the_post();?>
+                    <?php the_post_thumbnail('medium');?>
+                    <a href="<?php the_permalink();?>">
+                        <h3><?php the_title();?></h3>
+                    </a>
+                    <p><?php the_excerpt();?></p>
+                <?php endwhile;
+            else : ?>
+                <h2>No posts found</h2>
+            <?php endif;
+            wp_reset_postdata();
+        ?>
+    </div>
+</section>
+<section id="review-posts" class="px-4 col-12 text-center" style="max-width: 700px; margin: auto;">
+    <h2>Recent Review Posts</h2>
+
+    <div class="border border-warning">
+        <?php
+            $args = array(
+                'type'  => 'posts',
+                'category_name'      => 'reviews',
+            );
+            $lastBlog = new WP_Query($args);
+            // var_dump($lastBlog);
+            if ($lastBlog->have_posts()) :
+                while ($lastBlog->have_posts()) : $lastBlog->the_post();?>
+                    <?php the_post_thumbnail('medium');?>
+                    <a href="<?php the_permalink();?>">
+                        <h3><?php the_title();?></h3>
+                    </a>
+                    <p><?php the_excerpt();?></p>
+                <?php endwhile;
+            else : ?>
+                <h2>No posts found</h2>
+            <?php endif;
+            wp_reset_postdata();
+        ?>
+    </div>
+</section>
 <?php get_footer(); ?>
