@@ -74,4 +74,30 @@ add_action('widgets_init', 'custom_theme_widget_setup');
 
 // If classic widget screen is needed, then the block-based widget editor needs to be disabled
 add_filter('use_widgets_block_editor', '__return_false');
+
+/**
+ * Add Post Format column on All posts admin panel
+ */
+function add_post_format_column($columns) {
+    $columns['post_format'] = __( 'Post Format', 'custom_theme' );
+    // Move Post Format column before Date column
+    if (isset($columns['date'])) {
+        $date = $columns['date'];
+        unset($columns['date']);
+        $columns['date'] = $date;
+    }
+    return $columns;
+}
+add_action('manage_posts_columns', 'add_post_format_column');
+
+/**
+ * Populate Post Format column
+ */
+function populate_post_format_column($columns, $post_id) {
+    if ($columns === 'post_format') :
+        $format = get_post_format($post_id);
+        echo $format ? ucfirst($format) : __('Standard', 'custom_theme');
+    endif;
+}
+add_action('manage_posts_custom_column', 'populate_post_format_column', 10, 2);
 ?>
