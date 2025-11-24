@@ -10,6 +10,32 @@
         <?php else : ?>
             <h2>No Content found</h2>
         <?php endif; ?>
+        
+        <section id="most-recent-3-posts" class="">
+            <h2>Most Three Recent Posts</h2>
+            <div class="recent-posts-container container">
+                <?php 
+                    $args = array(
+                        'type'          => 'post',
+                        'posts_per_page' => 3,
+                        'category__in' => array(8,9,10),
+                    );
+                    $recentBlogs = new WP_Query ($args); 
+                ?>
+                <div class="recent-posts row">
+                    <?php if ($recentBlogs->have_posts()) :
+                        while ($recentBlogs->have_posts()) : $recentBlogs->the_post();?>
+                            <?php get_template_part('blocks/block', 'featured');?>
+                        <?php endwhile;?>
+                    <?php else : ?>
+                        <h2>No posts available</h2>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata();?>
+                </div>  
+            </div>
+        </section>
+        
+    <!-- ####### -->
     </div>
     <div class="col-4">
         <div class="sticky-top" style="top: 70px !important">
