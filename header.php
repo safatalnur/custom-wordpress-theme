@@ -8,7 +8,8 @@
     <?php wp_head(); ?>
 </head>
 <?php
-    $postname = $post->post_name . '-page';
+    global $post;
+    $postname = (is_object($post) && isset($post->post_name)) ? $post->post_name . '-page' : 'search-page';
     if (is_home() || is_front_page()) :
         $body_classes = array($postname, 'home-special-class');
     else :
@@ -39,6 +40,9 @@
           <a class="nav-link" href="/blog">Blog</a>
         </li>
       </ul>
+    </div>
+    <div class="float-end">
+        <?php get_search_form(); ?>
     </div>
   </div>
 </nav>
